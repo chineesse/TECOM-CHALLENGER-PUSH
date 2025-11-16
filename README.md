@@ -1,5 +1,8 @@
 Tecom Listener
-Challenger 10 / 10+ / XR → TCP → Local Server → Custom Notifications via Pushover
+Challenger V8 10 / 10+ / XR → TCP → Local Server → Custom Notifications via Pushover
+
+This requires a linux system on the same local network as the TECOM alarm panel ,  The Tecom alarm panel when set correctly in compaths, will send a packet to a printer, we simulate this printer as a python script and intercept the information
+and place it in a que to be used as you wish, as a pushover notification your phone and many other ideas
 
 A lightweight Python daemon for Tecom Challenger panels that listens for TCP event data (Computer Event Driven / Printer formats) and delivers custom notifications using a rule-based engine.
 
