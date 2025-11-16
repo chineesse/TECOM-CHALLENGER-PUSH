@@ -36,7 +36,7 @@ A powerful, fully local event listener for Tecom Challenger panels, supporting:
 
 🚀 Features
 
-	Works with Challenger 10, 10+, XR, V8 (with IP module)
+	Works with Challenger 8, 10, 10+, XR, V8 (with IP module)
 	
 	Supports Computer Event Driven or Printer formats
 	
