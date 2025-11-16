@@ -31,7 +31,7 @@ Zero coding required for users
 
 📦 Installation
 1. Clone repository
-git clone https://github.com/YOURNAME/tecom-listener.git
+git clone https://github.com/shifteh-187/tecom-listener.git
 cd tecom-listener
 
 2. Install requirements
