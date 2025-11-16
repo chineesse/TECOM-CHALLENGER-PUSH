@@ -1,6 +1,6 @@
 	 Tecom / Challenger Panel
                 ||
-                ||  events / alarms
+                ||  events / alarms 
                 \/
      .-----------------------.
      |   Debian Listener     |
