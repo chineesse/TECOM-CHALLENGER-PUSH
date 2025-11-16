@@ -57,6 +57,7 @@ A powerful, fully local event listener for Tecom Challenger panels, supporting:
 
 
 📦 Installation
+	
 	1. Clone repository
 	git clone https://github.com/Shifteth-187/TECOM-CHALLENGER-PUSH.git
 	cd TECOM-CHALLENGER-PUSH
